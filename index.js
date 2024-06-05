@@ -1,5 +1,6 @@
 // import * as core from '@actions/core';
 // import * as moment from 'moment';
+import * as github from '@actions/github';
 const core = require('@actions/core');
 const moment = require('moment');
 
