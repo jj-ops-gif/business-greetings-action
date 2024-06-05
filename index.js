@@ -1,15 +1,15 @@
-import * as core from '@actions/core';
-import * as moment from 'moment';
-import * as github from '@actions/github';
-// const core = require('@actions/core');
-// const moment = require('moment');
+// import * as core from '@actions/core';
+// import * as moment from 'moment';
+// import * as github from '@actions/github';
+import { getInput, setOutput, setFailed } from '@actions/core';
+import moment from 'moment';
 
 try {
-  const name = core.getInput('name');
+  const name = getInput('name');
   console.log(`Hello, ${name}. We appreciate your business!`);
   const timestamp = moment().format();
   console.log(`Greeting issued at: ${timestamp}`);
-  core.setOutput("timestamp", timestamp);
+  setOutput("timestamp", timestamp);
 } catch (error) {
-  core.setFailed(error.message);
+  setFailed(error.message);
 }
